@@ -1,0 +1,1 @@
+export { CanvasPointDrawingProvider } from './CanvasPointDrawingProvider';

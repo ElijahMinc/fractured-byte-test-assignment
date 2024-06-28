@@ -1,0 +1,26 @@
+.helperText {
+  position: fixed;
+
+  left: 25px;
+  top: 25px;
+}
+
+.list {
+}
+
+.list li {
+  padding-left: 25px;
+
+  position: relative;
+
+  margin-bottom: 25px;
+}
+
+.list li:after {
+  content: '🔻';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+}

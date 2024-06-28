@@ -1,0 +1,57 @@
+.wrapper {
+  max-width: 600px;
+  width: 250px;
+  height: 400px;
+
+  overflow-y: auto;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+
+  border: 1px solid var(--color-primary);
+  border-radius: 10px;
+
+  padding: 10px;
+
+  background-color: var(--color-dark);
+}
+
+.list {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  justify-content: center;
+}
+
+.title {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 5px; /* Ширина всего элемента навигации */
+}
+
+.wrapper::-webkit-scrollbar-track {
+  background: var(--bg-light-colo); /* Цвет дорожки */
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary); /* Цвет бегунка */
+  border-radius: 20px; /* Округление бегунка */
+  border: 3px solid var(--color-primary); /* Оформление границ бегунка */
+}
+
+.listItem {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+

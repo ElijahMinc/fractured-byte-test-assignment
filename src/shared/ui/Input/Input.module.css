@@ -1,0 +1,17 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.inputWrapper.bottom {
+  flex-direction: column-reverse;
+}
+
+.input {
+  padding: 5px;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  font-size: 14px;
+}
