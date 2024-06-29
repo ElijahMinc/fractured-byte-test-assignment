@@ -25,9 +25,8 @@
 }
 
 .fileNameButton,
-button {
+.fileNameButton button {
   width: 100%;
   min-width: auto;
   text-transform: uppercase;
-  margin-left: 10px;
 }
