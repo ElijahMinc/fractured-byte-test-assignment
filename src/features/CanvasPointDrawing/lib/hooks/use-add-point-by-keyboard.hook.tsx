@@ -1,5 +1,6 @@
 import { useCanvasPointDrawing } from '@entities/Canvas';
 import { useEffect } from 'react';
+import { addPointsIntoLocalStorage } from '../helpers/addPointsIntoLocalStorage';
 
 export const useAddPointByKeyboard = () => {
   const { points, handleSetPoints } = useCanvasPointDrawing();
@@ -8,6 +9,7 @@ export const useAddPointByKeyboard = () => {
     if (e.code.toUpperCase() !== 'SPACE') return;
     const newPoint = { id: Date.now(), x: 0, y: 0 };
     handleSetPoints([...points, newPoint]);
+    addPointsIntoLocalStorage(newPoint);
   };
 
   useEffect(() => {

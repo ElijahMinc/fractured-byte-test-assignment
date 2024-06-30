@@ -2,6 +2,7 @@ import { useCanvasPointDrawing } from '@entities/Canvas';
 import { Button } from '@shared/ui/Button';
 import { ButtonProps } from '@shared/ui/Button/button.types';
 import { forwardRef } from 'react';
+import { addPointsIntoLocalStorage } from '@features/CanvasPointDrawing/lib/helpers/addPointsIntoLocalStorage';
 
 //styles
 import styles from './AddPointButton.module.css';
@@ -13,6 +14,7 @@ export const AddPointButton = forwardRef<HTMLButtonElement, ButtonProps>(
     const addPoint = () => {
       const newPoint = { id: Date.now(), x: 0, y: 0 };
       handleSetPoints([...points, newPoint]);
+      addPointsIntoLocalStorage(newPoint);
     };
 
     const textButton = 'Add Point Manualy';

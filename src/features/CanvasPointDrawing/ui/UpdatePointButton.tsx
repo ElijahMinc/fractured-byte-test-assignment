@@ -1,6 +1,7 @@
 import { useCanvasPointDrawing } from '@entities/Canvas';
 import { Button } from '@shared/ui/Button';
 import { IUpdatePointBtnProps } from '../types/update-point-btn-props';
+import { updatePointsIntoLocalStorage } from '../lib/helpers/updatePointFromLocalStorage';
 
 export const UpdatePointButton = ({
   id,
@@ -16,6 +17,7 @@ export const UpdatePointButton = ({
         point.id === id ? { ...point, ...newCoords } : point
       )
     );
+    updatePointsIntoLocalStorage(newCoords, id);
   };
 
   const textButton = 'Update Point';

@@ -1,12 +1,13 @@
 import { CanvasPointDrawingContext, ICanvasContext } from '@entities/Canvas';
 import { IPointItem } from '@entities/Canvas/types/points-item.type';
+import { getPointsFromLocalStorage } from '@features/CanvasPointDrawing/lib/helpers/getPointsFromLocalStorage';
 import { Nullable } from '@shared/types/nullable';
 import { useState } from 'react';
 
 export const CanvasPointDrawingProvider = ({
   children,
 }: React.PropsWithChildren) => {
-  const [points, setPoints] = useState<IPointItem[]>([]);
+  const [points, setPoints] = useState<IPointItem[]>(getPointsFromLocalStorage());
   const [backgroundImage, setBackgroundImage] =
     useState<Nullable<string | ArrayBuffer>>(null);
 

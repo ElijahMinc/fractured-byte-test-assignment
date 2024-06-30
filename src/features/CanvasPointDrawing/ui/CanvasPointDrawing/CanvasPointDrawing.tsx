@@ -9,6 +9,8 @@ import { getWithinCanvasLayoutStatus } from '../../lib/helpers/getWithinCanvasLa
 import { defaultDotRadius } from '@entities/Canvas/constants/default-dot-radius';
 import { defaultStrokeWidth } from '@entities/Canvas/constants/default-stroke-width';
 import { getEvenNumber } from '@features/CanvasPointDrawing/lib/helpers/getEvenNumber';
+import { debounce } from '@shared/lib/helpers/debounce';
+import { updatePointsIntoLocalStorage } from '@features/CanvasPointDrawing/lib/helpers/updatePointFromLocalStorage';
 
 // styles
 import styles from './CanvasPointDrawing.module.css';
@@ -49,6 +51,10 @@ export const CanvasPointDrawing = () => {
         point.id === id ? { ...point, ...{ id, ...newCoords } } : point
       )
     );
+
+    debounce(() => {
+      updatePointsIntoLocalStorage(newCoords, id);
+    }, 500)();
   };
 
   return (
